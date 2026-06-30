@@ -97,7 +97,7 @@ function IconForAmenity({ name }: { name: string }) {
 
 export default function Show() {
     return (
-        <main className="min-h-screen bg-white pb-24 font-sans text-[13px] text-[#222] max-sm:pb-[84px] [&_a]:transition [&_a]:duration-150 [&_a]:active:scale-[0.99] [&_button]:transition [&_button]:duration-150 [&_button]:active:scale-[0.99] [&_img]:bg-[#f2f2f2]">
+        <main className="min-h-screen bg-white pb-24 font-sans text-[13px] text-[#1F2420] max-sm:pb-[84px] [&_a]:transition [&_a]:duration-150 [&_a]:active:scale-[0.99] [&_button]:transition [&_button]:duration-150 [&_button]:active:scale-[0.99] [&_img]:bg-[#EEF2EC]">
             <SiteHeader bookHref="#booking" containerClassName="max-w-[1280px] lg:px-8" navBaseHref="/" />
             <div className="mx-auto max-w-[1280px] px-4 lg:px-8 max-sm:px-0">
                 <TitleBar />
@@ -137,7 +137,7 @@ function PhotoGrid() {
                     <img key={photo} src={photo} alt={`Villa photo ${index + 2}`} className="h-full w-full object-cover" />
                 ))}
             </div>
-            <button className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-md border border-[#222] bg-white px-3 py-2 text-xs font-semibold hover:bg-[#f2f2f2] max-sm:hidden" type="button">
+            <button className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-md border border-[#1F2420] bg-white px-3 py-2 text-xs font-semibold hover:bg-[#EEF2EC] max-sm:hidden" type="button">
                 <Camera size={13} />Show all photos
             </button>
         </section>
@@ -147,10 +147,10 @@ function PhotoGrid() {
 function ListingDetails() {
     return (
         <div>
-            <section className="border-b border-[#dddddd] pb-8">
+            <section className="border-b border-[#DDE4DC] pb-8">
                 <h2 className="text-base font-semibold leading-6">Entire villa in Kecamatan Umbulharjo, Indonesia</h2>
                 <p className="mt-1 text-xs">16+ guests - 4 bedrooms - 3 beds - 4.5 baths</p>
-                <div className="mt-5 grid grid-cols-[80px_1fr_70px_70px] items-center rounded-lg border border-[#dddddd] px-5 py-3 max-sm:grid-cols-1 max-sm:gap-3">
+                <div className="mt-5 grid grid-cols-[80px_1fr_70px_70px] items-center rounded-lg border border-[#DDE4DC] px-5 py-3 max-sm:grid-cols-1 max-sm:gap-3">
                     <div className="flex items-center gap-2 font-semibold"><Award size={20} />Favorite</div>
                     <div className="px-5 text-xs font-semibold max-sm:px-0">One of the most loved homes, according to guests</div>
                     <div className="text-center text-sm font-semibold max-sm:text-left">4.94<div className="mt-1 inline-flex"><Star size={11} fill="currentColor" /></div></div>
@@ -158,28 +158,28 @@ function ListingDetails() {
                 </div>
             </section>
 
-            <section className="flex gap-4 border-b border-[#dddddd] py-5">
+            <section className="flex gap-4 border-b border-[#DDE4DC] py-5">
                 <img src="https://picsum.photos/seed/show-host/96/96" alt="Host profile" className="h-10 w-10 rounded-full object-cover" />
                 <div>
                     <h3 className="font-semibold">Hosted by Koldo</h3>
-                    <p className="text-xs text-[#6a6a6a]">9 years hosting</p>
+                    <p className="text-xs text-[#6D766E]">9 years hosting</p>
                 </div>
             </section>
 
-            <section className="space-y-5 border-b border-[#dddddd] py-5">
+            <section className="space-y-5 border-b border-[#DDE4DC] py-5">
                 {highlights.map(({ title, body, Icon }) => (
                     <div key={title} className="flex gap-5">
                         <Icon size={24} />
                         <div>
                             <h3 className="font-semibold">{title}</h3>
-                            <p className="text-xs text-[#6a6a6a]">{body}</p>
+                            <p className="text-xs text-[#6D766E]">{body}</p>
                         </div>
                     </div>
                 ))}
             </section>
 
-            <section className="border-b border-[#dddddd] py-6 leading-5">
-                <p className="rounded-md bg-[#f7f7f7] px-4 py-3 text-xs text-[#6a6a6a]">Some info has been automatically translated. <button className="font-semibold text-[#222] underline" type="button">Show original</button></p>
+            <section className="border-b border-[#DDE4DC] py-6 leading-5">
+                <p className="rounded-md bg-[#F7F8F5] px-4 py-3 text-xs text-[#6D766E]">Some info has been automatically translated. <button className="font-semibold text-[#1F2420] underline" type="button">Show original</button></p>
                 <p className="mt-5">A beautiful, lush, green, comfortable and quiet place in the middle of the city. Newly renovated villa made with care, using a modern tropical open concept and generous communal spaces.</p>
                 <h3 className="mt-5 font-semibold">The space</h3>
                 <p className="mt-2">The house has 3 bedrooms and 4 bathrooms. Each room has a private terrace, with a kitchen, dining area, pool, and spaces for gathering with family.</p>
@@ -196,14 +196,14 @@ function ListingDetails() {
 
 function SleepingRooms() {
     return (
-        <section className="border-b border-[#dddddd] py-8">
+        <section className="border-b border-[#DDE4DC] py-8">
             <div className="flex items-center justify-between">
                 <h2 className="text-base font-semibold">Where you'll sleep</h2>
-                <div className="flex items-center gap-3 text-xs text-[#6a6a6a]"><span>1 / 2</span><button className="grid h-6 w-6 place-items-center rounded-full border" type="button"><ChevronLeft size={12} /></button><button className="grid h-6 w-6 place-items-center rounded-full border" type="button"><ChevronRight size={12} /></button></div>
+                <div className="flex items-center gap-3 text-xs text-[#6D766E]"><span>1 / 2</span><button className="grid h-6 w-6 place-items-center rounded-full border" type="button"><ChevronLeft size={12} /></button><button className="grid h-6 w-6 place-items-center rounded-full border" type="button"><ChevronRight size={12} /></button></div>
             </div>
             <div className="mt-5 grid grid-cols-2 gap-3 max-sm:grid-cols-1">
                 {rooms.slice(0, 2).map((room) => (
-                    <div key={room.title} className="overflow-hidden rounded-xl border border-[#dddddd]">
+                    <div key={room.title} className="overflow-hidden rounded-xl border border-[#DDE4DC]">
                         <img src={room.image} alt={room.title} className="h-36 w-full object-cover" />
                         <div className="p-3">
                             <h3 className="font-semibold">{room.title}</h3>
@@ -218,26 +218,26 @@ function SleepingRooms() {
 
 function Amenities() {
     return (
-        <section className="border-b border-[#dddddd] py-8">
+        <section className="border-b border-[#DDE4DC] py-8">
             <h2 className="text-base font-semibold">What this place offers</h2>
             <div className="mt-6 grid grid-cols-2 gap-x-12 gap-y-4 max-sm:grid-cols-1">
                 {amenities.map((amenity) => (
-                    <div key={amenity.name} className={`flex gap-4 ${amenity.unavailable ? 'text-[#6a6a6a] line-through' : ''}`}>
+                    <div key={amenity.name} className={`flex gap-4 ${amenity.unavailable ? 'text-[#6D766E] line-through' : ''}`}>
                         <IconForAmenity name={amenity.name} />
                         <span>{amenity.unavailable ? `Unavailable: ${amenity.name}` : amenity.name}</span>
                     </div>
                 ))}
             </div>
-            <button className="mt-7 rounded-md border border-[#222] px-4 py-3 text-xs font-semibold hover:bg-[#f2f2f2]" type="button">Show all 64 amenities</button>
+            <button className="mt-7 rounded-md border border-[#1F2420] px-4 py-3 text-xs font-semibold hover:bg-[#EEF2EC]" type="button">Show all 64 amenities</button>
         </section>
     );
 }
 
 function Calendar() {
     return (
-        <section className="border-b border-[#dddddd] py-8">
+        <section className="border-b border-[#DDE4DC] py-8">
             <h2 className="text-base font-semibold">Select check-in date</h2>
-            <p className="mt-1 text-xs text-[#6a6a6a]">Add your travel dates for exact pricing</p>
+            <p className="mt-1 text-xs text-[#6D766E]">Add your travel dates for exact pricing</p>
             <div className="mt-6 grid grid-cols-2 gap-10 max-sm:grid-cols-1">
                 <Month title="June 2026" days={calendarDays} />
                 <Month title="July 2026" days={['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']} offset={3} />
@@ -255,12 +255,12 @@ function Month({ title, days, offset = 0 }: { title: string; days: string[]; off
                 <h3 className="text-xs font-semibold">{title}</h3>
                 <ChevronRight size={14} />
             </div>
-            <div className="grid grid-cols-7 text-center text-xs font-semibold text-[#6a6a6a]">
+            <div className="grid grid-cols-7 text-center text-xs font-semibold text-[#6D766E]">
                 {'SMTWTFS'.split('').map((day, index) => <span key={`${day}-${index}`}>{day}</span>)}
             </div>
             <div className="mt-2 grid grid-cols-7 gap-y-2 text-center text-xs">
                 {Array.from({ length: offset }).map((_, index) => <span key={`blank-${index}`} />)}
-                {days.map((day) => <button key={day} className="mx-auto grid h-7 w-7 place-items-center rounded-full text-[#717171] hover:border hover:border-[#222]" type="button">{day}</button>)}
+                {days.map((day) => <button key={day} className="mx-auto grid h-7 w-7 place-items-center rounded-full text-[#6D766E] hover:border hover:border-[#1F2420]" type="button">{day}</button>)}
             </div>
         </div>
     );
@@ -268,36 +268,36 @@ function Month({ title, days, offset = 0 }: { title: string; days: string[]; off
 
 function Reviews() {
     return (
-        <section className="border-b border-[#dddddd] py-10">
+        <section className="border-b border-[#DDE4DC] py-10">
             <div className="mt-8 grid grid-cols-2 gap-x-16 gap-y-8 max-sm:grid-cols-1">
                 {reviews.map(([name, years, body]) => (
                     <article key={name}>
                         <div className="flex items-center gap-3">
-                            <div className="grid h-9 w-9 place-items-center rounded-full bg-[#dddddd] font-semibold">{name[0]}</div>
-                            <div><h3 className="font-semibold">{name}</h3><p className="text-xs text-[#6a6a6a]">{years}</p></div>
+                            <div className="grid h-9 w-9 place-items-center rounded-full bg-[#DDE4DC] font-semibold">{name[0]}</div>
+                            <div><h3 className="font-semibold">{name}</h3><p className="text-xs text-[#6D766E]">{years}</p></div>
                         </div>
                         <p className="mt-3 line-clamp-3 leading-5">{body}</p>
                         <button className="mt-2 font-semibold underline" type="button">Show more</button>
                     </article>
                 ))}
             </div>
-            <button className="mt-8 rounded-md border border-[#222] px-5 py-3 text-xs font-semibold" type="button">Show all 145 reviews</button>
+            <button className="mt-8 rounded-md border border-[#1F2420] px-5 py-3 text-xs font-semibold" type="button">Show all 145 reviews</button>
         </section>
     );
 }
 
 function BookingCard() {
     return (
-        <aside id="booking" className="sticky top-24 h-fit scroll-mt-24 rounded-xl border border-[#dddddd] p-5 shadow-[0_6px_16px_rgba(0,0,0,0.12)] max-lg:hidden">
+        <aside id="booking" className="sticky top-24 h-fit scroll-mt-24 rounded-xl border border-[#DDE4DC] p-5 shadow-[0_6px_16px_rgba(0,0,0,0.12)] max-lg:hidden">
             <h2 className="text-base font-semibold">Add dates for prices</h2>
-            <div className="mt-5 overflow-hidden rounded-lg border border-[#999] text-[10px] font-semibold">
+            <div className="mt-5 overflow-hidden rounded-lg border border-[#DDE4DC] text-[10px] font-semibold">
                 <div className="grid grid-cols-2">
-                    <button className="border-r border-[#999] p-3 text-left" type="button">CHECK-IN<br /><span className="text-xs font-normal">Add date</span></button>
+                    <button className="border-r border-[#DDE4DC] p-3 text-left" type="button">CHECK-IN<br /><span className="text-xs font-normal">Add date</span></button>
                     <button className="p-3 text-left" type="button">CHECKOUT<br /><span className="text-xs font-normal">Add date</span></button>
                 </div>
-                <button className="flex w-full items-center justify-between border-t border-[#999] p-3 text-left" type="button"><span>GUESTS<br /><span className="text-xs font-normal">1 guest</span></span><ChevronDown size={12} /></button>
+                <button className="flex w-full items-center justify-between border-t border-[#DDE4DC] p-3 text-left" type="button"><span>GUESTS<br /><span className="text-xs font-normal">1 guest</span></span><ChevronDown size={12} /></button>
             </div>
-            <button className="mt-4 h-10 w-full rounded-lg bg-[#ff385c] text-xs font-semibold text-white hover:bg-[#e00b41]" type="button">Check availability</button>
+            <button className="mt-4 h-10 w-full rounded-lg bg-[#1F5C45] text-xs font-semibold text-white hover:bg-[#174936]" type="button">Check availability</button>
             <button className="mx-auto mt-6 flex items-center gap-2 text-xs underline" type="button"><CalendarDays size={13} />Report this listing</button>
         </aside>
     );
@@ -306,10 +306,10 @@ function BookingCard() {
 function BelowFold() {
     return (
         <div className="mx-auto max-w-[1280px] max-sm:px-6">
-            <section className="border-b border-[#dddddd] py-8">
+            <section className="border-b border-[#DDE4DC] py-8">
                 <h2 className="text-base font-semibold">Where you'll be</h2>
                 <p className="mt-2 text-xs">Kecamatan Umbulharjo, Daerah Istimewa Yogyakarta, Indonesia</p>
-                <div className="mt-5 h-[420px] overflow-hidden rounded-lg border border-[#dddddd] bg-[#f2f2f2]">
+                <div className="mt-5 h-[420px] overflow-hidden rounded-lg border border-[#DDE4DC] bg-[#EEF2EC]">
                     <iframe
                         title="Villa Amalura II location on Google Maps"
                         src="https://maps.google.com/maps?q=Kecamatan%20Umbulharjo%2C%20Yogyakarta%2C%20Indonesia&t=&z=14&ie=UTF8&iwloc=&output=embed"
@@ -318,19 +318,19 @@ function BelowFold() {
                         referrerPolicy="no-referrer-when-downgrade"
                     />
                 </div>
-                <p className="mt-4 text-xs text-[#6a6a6a]">This listing's location is verified and the exact location will be provided after booking.</p>
+                <p className="mt-4 text-xs text-[#6D766E]">This listing's location is verified and the exact location will be provided after booking.</p>
             </section>
-            <section className="border-b border-[#dddddd] py-8">
+            <section className="border-b border-[#DDE4DC] py-8">
                 <h2 className="text-base font-semibold">Neighborhood highlights</h2>
                 <p className="mt-4 max-w-[620px] leading-5">Located in a quiet housing complex in the south-center of the city, close to parks, local streets, and open houses.</p>
                 <button className="mt-3 font-semibold underline" type="button">Show more</button>
             </section>
-            <section className="grid grid-cols-3 gap-12 border-b border-[#dddddd] py-8 max-sm:grid-cols-1">
+            <section className="grid grid-cols-3 gap-12 border-b border-[#DDE4DC] py-8 max-sm:grid-cols-1">
                 {policyCards.map(({ title, body, Icon }) => (
                     <div key={title}>
                         <Icon size={20} />
                         <h3 className="mt-3 font-semibold">{title}</h3>
-                        <p className="mt-2 text-xs leading-5 text-[#6a6a6a]">{body}</p>
+                        <p className="mt-2 text-xs leading-5 text-[#6D766E]">{body}</p>
                         <button className="mt-2 text-xs font-semibold underline" type="button">Learn more</button>
                     </div>
                 ))}
@@ -341,15 +341,16 @@ function BelowFold() {
 
 function MobileBookingBar() {
     return (
-        <div className="fixed inset-x-0 bottom-0 z-20 flex items-center justify-between border-t border-[#dddddd] bg-white px-6 py-4 sm:hidden">
+        <div className="fixed inset-x-0 bottom-0 z-20 flex items-center justify-between border-t border-[#DDE4DC] bg-white px-6 py-4 sm:hidden">
             <div>
                 <div className="font-semibold">Add dates</div>
                 <div className="text-sm underline">for prices</div>
             </div>
-            <button className="rounded-lg bg-[#ff385c] px-5 py-3 text-sm font-semibold text-white" type="button">Check availability</button>
+            <button className="rounded-lg bg-[#1F5C45] px-5 py-3 text-sm font-semibold text-white" type="button">Check availability</button>
         </div>
     );
 }
+
 
 
 

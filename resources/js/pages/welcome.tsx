@@ -94,15 +94,15 @@ const reviews = [
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
     return (
         <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-[#1f1f1f] md:text-4xl">{title}</h2>
-            {subtitle ? <p className="mt-3 text-sm leading-6 text-[#5a5a5a] md:text-[15px]">{subtitle}</p> : null}
+            <h2 className="text-3xl font-semibold tracking-tight text-[#1F2420] md:text-4xl">{title}</h2>
+            {subtitle ? <p className="mt-3 text-sm leading-6 text-[#6D766E] md:text-[15px]">{subtitle}</p> : null}
         </div>
     );
 }
 
 export default function Welcome() {
     return (
-        <div className="landing min-h-screen bg-[#fafafa] text-[#1f1f1f]">
+        <div className="landing min-h-screen bg-[#F7F8F5] text-[#1F2420]">
 
             <SiteHeader />
 
@@ -118,7 +118,7 @@ export default function Welcome() {
                                 Experience a peaceful stay with elegant rooms, a private pool, and warm hospitality in one unforgettable villa destination.
                             </p>
                             <div className="mt-8 flex flex-wrap gap-4">
-                                <a href="#book" className="rounded-xl bg-[#ff385c] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_32px_rgba(255,56,92,0.28)] transition hover:bg-[#e00b41]">
+                                <a href="#book" className="rounded-xl bg-[#1F5C45] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_16px_32px_rgba(31,92,69,0.26)] transition hover:bg-[#174936]">
                                     Book Your Room
                                 </a>
                                 <a href="#rooms" className="inline-flex items-center gap-2 rounded-xl border border-white/45 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10">
@@ -127,7 +127,7 @@ export default function Welcome() {
                             </div>
                         </div>
 
-                        <div id="book" className="mx-auto w-full max-w-[1120px] rounded-[22px] bg-white p-4 shadow-[0_18px_40px_rgba(0,0,0,0.14)] ring-1 ring-black/5">
+                        <div id="book" className="mx-auto w-full max-w-[1120px] rounded-[22px] bg-white p-4 shadow-[0_18px_40px_rgba(0,0,0,0.14)] ring-1 ring-[#DDE4DC]">
                             <div className="grid gap-4 md:grid-cols-[1.2fr_1.2fr_1fr_1fr_auto] md:items-center">
                                 {[
                                     ['Check-in', 'May 24, 2025', CalendarDays],
@@ -135,15 +135,15 @@ export default function Welcome() {
                                     ['Guests', '2 Guests', Users],
                                     ['Room type', 'All Rooms', ChevronDown],
                                 ].map(([label, value, Icon]) => (
-                                    <div key={label as string} className="flex items-center justify-between gap-3 rounded-2xl bg-[#fafafa] px-4 py-4 ring-1 ring-black/5 md:bg-transparent md:px-0 md:py-0 md:ring-0">
+                                    <div key={label as string} className="flex items-center justify-between gap-3 rounded-2xl bg-[#F7F8F5] px-4 py-4 ring-1 ring-[#DDE4DC] md:bg-transparent md:px-0 md:py-0 md:ring-0">
                                         <div>
-                                            <p className="text-sm font-medium text-[#353535]">{label as string}</p>
-                                            <p className="mt-1 text-sm text-[#7a7a7a]">{value as string}</p>
+                                            <p className="text-sm font-medium text-[#1F2420]">{label as string}</p>
+                                            <p className="mt-1 text-sm text-[#6D766E]">{value as string}</p>
                                         </div>
-                                        <Icon className="h-5 w-5 text-[#777]" />
+                                        <Icon className="h-5 w-5 text-[#6D766E]" />
                                     </div>
                                 ))}
-                                <a href="#rooms" className="rounded-xl bg-[#ff385c] px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-[#e00b41]">Book now</a>
+                                <a href="#rooms" className="rounded-xl bg-[#1F5C45] px-7 py-4 text-center text-sm font-semibold text-white transition hover:bg-[#174936]">Book now</a>
                             </div>
                         </div>
                     </div>
@@ -159,8 +159,8 @@ export default function Welcome() {
                             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-5">
                                 {[[Waves, 'Private Pool'], [Coffee, 'Breakfast Included'], [Mountain, 'Garden & Ocean Views'], [Wifi, 'Free WiFi'], [CarFront, 'Airport Transfer']].map(([Icon, label]) => (
                                     <div key={label as string} className="px-4 py-4 text-center">
-                                        <Icon className="mx-auto h-5 w-5 text-[#222]" />
-                                        <p className="mt-3 text-xs font-medium text-[#333]">{label as string}</p>
+                                        <Icon className="mx-auto h-5 w-5 text-[#1F2420]" />
+                                        <p className="mt-3 text-xs font-medium text-[#1F2420]">{label as string}</p>
                                     </div>
                                 ))}
                             </div>
@@ -175,22 +175,22 @@ export default function Welcome() {
                     <SectionTitle title="Choose Your Room" subtitle="Select the perfect room for your stay" />
                     <div className="mt-10 grid gap-6 lg:grid-cols-4">
                         {rooms.map((room) => (
-                            <article key={room.name} className="overflow-hidden rounded-[22px] border border-black/8 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(0,0,0,0.1)]">
+                            <article key={room.name} className="overflow-hidden rounded-[22px] border border-[#DDE4DC] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.06)] transition hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(0,0,0,0.1)]">
                                 <div className="relative">
                                     <img src={room.image} alt={room.name} className="h-52 w-full object-cover" />
-                                    <span className="absolute right-3 top-3 rounded-lg bg-black/70 px-2.5 py-1 text-xs font-medium text-white">{room.rating}</span>
+                                    <span className="absolute right-3 top-3 rounded-lg bg-[#1F2420]/70 px-2.5 py-1 text-xs font-medium text-white">{room.rating}</span>
                                 </div>
                                 <div className="p-4">
                                     <h3 className="text-lg font-semibold">{room.name}</h3>
-                                    <p className="mt-2 text-sm leading-6 text-[#5f5f5f]">{room.desc}</p>
-                                    <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-[#666]">
+                                    <p className="mt-2 text-sm leading-6 text-[#6D766E]">{room.desc}</p>
+                                    <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-[#6D766E]">
                                         {room.details.map((detail) => (
                                             <div key={detail} className="flex items-center gap-2"><SquareStack className="h-3.5 w-3.5" /><span>{detail}</span></div>
                                         ))}
                                     </div>
                                     <div className="mt-5 flex items-center justify-between">
-                                        <p className="text-[26px] font-semibold tracking-tight">{room.price} <span className="text-sm font-medium text-[#777]">/ night</span></p>
-                                        <a href="/show" className="rounded-xl bg-[#ff385c] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#e00b41]">View Details</a>
+                                        <p className="text-[26px] font-semibold tracking-tight">{room.price} <span className="text-sm font-medium text-[#6D766E]">/ night</span></p>
+                                        <a href="/show" className="rounded-xl bg-[#1F5C45] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#174936]">View Details</a>
                                     </div>
                                 </div>
                             </article>
@@ -202,9 +202,9 @@ export default function Welcome() {
                     <SectionTitle title="Everything You Need for a Perfect Stay" />
                     <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
                         {amenities.map((amenity) => (
-                            <div key={amenity.label} className="flex items-center gap-3 rounded-2xl border border-black/8 bg-white px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
-                                <amenity.icon className="h-5 w-5 text-[#262626]" />
-                                <span className="text-sm font-medium text-[#333]">{amenity.label}</span>
+                            <div key={amenity.label} className="flex items-center gap-3 rounded-2xl border border-[#DDE4DC] bg-white px-4 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+                                <amenity.icon className="h-5 w-5 text-[#1F2420]" />
+                                <span className="text-sm font-medium text-[#1F2420]">{amenity.label}</span>
                             </div>
                         ))}
                     </div>
@@ -215,17 +215,17 @@ export default function Welcome() {
                     <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
                         {gallery.map((image, index) => <img key={`${image}-${index}`} src={image} alt={`Villa gallery ${index + 1}`} className="h-44 w-full rounded-[18px] object-cover shadow-[0_8px_20px_rgba(0,0,0,0.08)] md:h-52" />)}
                     </div>
-                    <div className="mt-6 text-center"><a href="#gallery" className="inline-flex rounded-xl border border-black/10 bg-white px-5 py-3 text-sm font-semibold shadow-[0_8px_20px_rgba(0,0,0,0.04)]">View full gallery</a></div>
+                    <div className="mt-6 text-center"><a href="#gallery" className="inline-flex rounded-xl border border-[#DDE4DC] bg-white px-5 py-3 text-sm font-semibold shadow-[0_8px_20px_rgba(0,0,0,0.04)]">View full gallery</a></div>
                 </section>
 
                 <section id="reviews" className="mx-auto max-w-[1280px] px-4 pb-16 lg:px-8">
                     <SectionTitle title="Why Guests Love This Villa" />
                     <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                         {[[Play, 'Peaceful Private Atmosphere'], [BedDouble, 'Carefully Designed Rooms'], [MapPin, 'Great Location'], [Heart, 'Friendly Personalized Service']].map(([Icon, title]) => (
-                            <article key={title as string} className="rounded-[22px] border border-black/8 bg-white p-6 text-center shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
-                                <Icon className="mx-auto h-6 w-6 text-[#222]" />
+                            <article key={title as string} className="rounded-[22px] border border-[#DDE4DC] bg-white p-6 text-center shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+                                <Icon className="mx-auto h-6 w-6 text-[#1F2420]" />
                                 <h3 className="mt-4 text-base font-semibold">{title as string}</h3>
-                                <p className="mt-2 text-sm leading-6 text-[#5c5c5c]">Enjoy thoughtful comfort, privacy, and warm service in every detail.</p>
+                                <p className="mt-2 text-sm leading-6 text-[#6D766E]">Enjoy thoughtful comfort, privacy, and warm service in every detail.</p>
                             </article>
                         ))}
                     </div>
@@ -233,12 +233,12 @@ export default function Welcome() {
 
                 <section id="location" className="mx-auto max-w-[1280px] px-4 pb-16 lg:px-8">
                     <div className="grid gap-6 lg:grid-cols-[320px_1fr] lg:items-stretch">
-                        <div className="rounded-[24px] border border-black/8 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+                        <div className="rounded-[24px] border border-[#DDE4DC] bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
                             <h2 className="text-3xl font-semibold tracking-tight">Perfectly Located for Your Stay</h2>
-                            <p className="mt-4 text-sm leading-6 text-[#5c5c5c]">VillaStay is located in a peaceful area just minutes from stunning beaches, local restaurants, and popular attractions.</p>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Bali%2C%20Indonesia" target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-xl border border-[#ff385c] px-5 py-3 text-sm font-semibold text-[#ff385c] transition hover:bg-[#ff385c] hover:text-white">View location</a>
+                            <p className="mt-4 text-sm leading-6 text-[#6D766E]">VillaStay is located in a peaceful area just minutes from stunning beaches, local restaurants, and popular attractions.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Bali%2C%20Indonesia" target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-xl border border-[#1F5C45] px-5 py-3 text-sm font-semibold text-[#1F5C45] transition hover:bg-[#1F5C45] hover:text-white">View location</a>
                         </div>
-                        <div className="relative overflow-hidden rounded-[24px] border border-black/8 bg-[#eaf1f6] shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
+                        <div className="relative overflow-hidden rounded-[24px] border border-[#DDE4DC] bg-[#EEF2EC] shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
                                                         <iframe
                                 title="VillaStay Google Maps location"
                                 src={googleMapsUrl}
@@ -247,15 +247,15 @@ export default function Welcome() {
                                 referrerPolicy="no-referrer-when-downgrade"
                                 allowFullScreen
                             />
-                            <div className="absolute left-1/2 top-10 -translate-x-1/2 rounded-full bg-white px-4 py-2 text-sm font-semibold shadow-lg"><span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-[#ff385c]" /> VillaStay</span></div>
+                            <div className="absolute left-1/2 top-10 -translate-x-1/2 rounded-full bg-white px-4 py-2 text-sm font-semibold shadow-lg"><span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-[#1F5C45]" /> VillaStay</span></div>
                         </div>
                     </div>
                 </section>
 
                 {/* <section className="mx-auto max-w-[1280px] px-4 pb-16 lg:px-8">
-                    <div className="grid gap-6 overflow-hidden rounded-[28px] border border-black/8 bg-white shadow-[0_10px_28px_rgba(0,0,0,0.06)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                    <div className="grid gap-6 overflow-hidden rounded-[28px] border border-[#DDE4DC] bg-white shadow-[0_10px_28px_rgba(0,0,0,0.06)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                         <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb21042?auto=format&fit=crop&w=1200&q=80" alt="Villa sunset pool" className="h-full min-h-[240px] w-full object-cover" />
-                        <div className="p-8 lg:p-10"><h2 className="text-3xl font-semibold tracking-tight">Ready to stay at VillaStay?</h2><p className="mt-4 max-w-lg text-sm leading-6 text-[#5c5c5c]">Choose your room and enjoy a relaxing villa experience designed for comfort and unforgettable moments.</p><a href="#book" className="mt-6 inline-flex rounded-xl bg-[#ff385c] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e00b41]">Book Your Stay</a></div>
+                        <div className="p-8 lg:p-10"><h2 className="text-3xl font-semibold tracking-tight">Ready to stay at VillaStay?</h2><p className="mt-4 max-w-lg text-sm leading-6 text-[#6D766E]">Choose your room and enjoy a relaxing villa experience designed for comfort and unforgettable moments.</p><a href="#book" className="mt-6 inline-flex rounded-xl bg-[#1F5C45] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#174936]">Book Your Stay</a></div>
                     </div>
                 </section> */}
             </main>
@@ -264,6 +264,7 @@ export default function Welcome() {
         </div>
     );
 }
+
 
 
 
