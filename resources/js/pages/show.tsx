@@ -7,12 +7,9 @@ import {
     ChevronDown,
     ChevronLeft,
     ChevronRight,
-    Globe2,
     Heart,
     Home,
     Laptop,
-    Menu,
-    MessageSquare,
     Minus,
     PawPrint,
     Plus,
@@ -25,7 +22,7 @@ import {
     Wifi,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import './show.css';
+import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 
 type Amenity = {
     name: string;
@@ -100,57 +97,20 @@ function IconForAmenity({ name }: { name: string }) {
 
 export default function Show() {
     return (
-        <main className="show-page min-h-screen bg-white pb-24 text-[13px] text-[#222]">
-            <Header />
-            <div className="mx-auto max-w-[1120px] px-6 max-sm:px-0">
+        <main className="min-h-screen bg-white pb-24 font-sans text-[13px] text-[#222] max-sm:pb-[84px] [&_a]:transition [&_a]:duration-150 [&_a]:active:scale-[0.99] [&_button]:transition [&_button]:duration-150 [&_button]:active:scale-[0.99] [&_img]:bg-[#f2f2f2]">
+            <SiteHeader bookHref="#booking" containerClassName="max-w-[1280px] lg:px-8" navBaseHref="/" />
+            <div className="mx-auto max-w-[1280px] px-4 lg:px-8 max-sm:px-0">
                 <TitleBar />
                 <PhotoGrid />
-                <div className="grid grid-cols-[minmax(0,660px)_340px] gap-14 pt-8 max-lg:grid-cols-1 max-lg:gap-8 max-sm:px-6 max-sm:pt-7">
+                <div className="grid grid-cols-[minmax(0,1fr)_360px] gap-12 pt-8 max-lg:grid-cols-1 max-lg:gap-8 max-sm:px-6 max-sm:pt-7">
                     <ListingDetails />
                     <BookingCard />
                 </div>
                 <BelowFold />
             </div>
-            <Footer />
+            <SiteFooter containerClassName="max-w-[1280px] lg:px-8" />
             <MobileBookingBar />
         </main>
-    );
-}
-
-function Header() {
-    return (
-        <header className="border-b border-[#dddddd] bg-white max-sm:border-0">
-            <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-8 max-sm:hidden">
-                <a href="/" className="flex items-center gap-2 font-bold text-[#ff385c]">
-                    <Home className="h-5 w-5" />
-                    <span className="text-sm text-[#222]">VillaStay</span>
-                </a>
-                <div className="flex h-9 w-[380px] items-center rounded-full border border-[#dddddd] shadow-[0_2px_7px_rgba(0,0,0,0.10)]">
-                    {['Anywhere', 'Anytime', 'Add guests'].map((item, index) => (
-                        <button key={item} className={`h-full flex-1 px-4 text-xs font-semibold ${index < 2 ? 'border-r border-[#dddddd]' : 'text-[#6a6a6a]'}`} type="button">
-                            {item}
-                        </button>
-                    ))}
-                    <button className="mr-2 grid h-7 w-7 place-items-center rounded-full bg-[#ff385c] text-white" type="button" aria-label="Search">
-                        <Search size={13} />
-                    </button>
-                </div>
-                <div className="flex items-center gap-2">
-                    <button className="rounded-full px-3 py-2 text-xs font-medium hover:bg-[#f2f2f2]" type="button">Become a host</button>
-                    <button className="grid h-8 w-8 place-items-center rounded-full bg-[#f2f2f2]" type="button" aria-label="Language"><Globe2 size={14} /></button>
-                    <button className="grid h-8 w-8 place-items-center rounded-full bg-[#f2f2f2]" type="button" aria-label="Menu"><Menu size={14} /></button>
-                </div>
-            </div>
-            <div className="p-5 sm:hidden">
-                <button className="flex h-14 w-full items-center gap-3 rounded-full border border-[#dddddd] px-5 text-left shadow-[0_3px_12px_rgba(0,0,0,0.12)]" type="button">
-                    <Search size={18} />
-                    <span>
-                        <span className="block text-sm font-semibold">Start your search</span>
-                        <span className="block text-xs text-[#6a6a6a]">Anywhere - Anytime - Add guests</span>
-                    </span>
-                </button>
-            </div>
-        </header>
     );
 }
 
@@ -328,7 +288,7 @@ function Reviews() {
 
 function BookingCard() {
     return (
-        <aside className="sticky top-8 h-fit rounded-xl border border-[#dddddd] p-5 shadow-[0_6px_16px_rgba(0,0,0,0.12)] max-lg:hidden">
+        <aside id="booking" className="sticky top-24 h-fit scroll-mt-24 rounded-xl border border-[#dddddd] p-5 shadow-[0_6px_16px_rgba(0,0,0,0.12)] max-lg:hidden">
             <h2 className="text-base font-semibold">Add dates for prices</h2>
             <div className="mt-5 overflow-hidden rounded-lg border border-[#999] text-[10px] font-semibold">
                 <div className="grid grid-cols-2">
@@ -345,19 +305,18 @@ function BookingCard() {
 
 function BelowFold() {
     return (
-        <div className="mx-auto max-w-[1120px] max-sm:px-6">
+        <div className="mx-auto max-w-[1280px] max-sm:px-6">
             <section className="border-b border-[#dddddd] py-8">
                 <h2 className="text-base font-semibold">Where you'll be</h2>
                 <p className="mt-2 text-xs">Kecamatan Umbulharjo, Daerah Istimewa Yogyakarta, Indonesia</p>
-                <div className="relative mt-5 h-[360px] overflow-hidden rounded-lg bg-[#e8e5df]">
-                    <button className="absolute left-5 top-5 grid h-8 w-8 place-items-center rounded-full bg-white shadow" type="button"><Search size={14} /></button>
-                    <div className="absolute right-5 top-5 grid overflow-hidden rounded-full bg-white shadow">
-                        <button className="grid h-8 w-8 place-items-center border-b" type="button"><Plus size={14} /></button>
-                        <button className="grid h-8 w-8 place-items-center" type="button"><Minus size={14} /></button>
-                    </div>
-                    <div className="absolute inset-0 m-auto grid h-12 w-12 place-items-center rounded-full bg-[#ff385c]/20">
-                        <div className="grid h-8 w-8 place-items-center rounded-full bg-[#ff385c] text-white"><Camera size={14} /></div>
-                    </div>
+                <div className="mt-5 h-[420px] overflow-hidden rounded-lg border border-[#dddddd] bg-[#f2f2f2]">
+                    <iframe
+                        title="Villa Amalura II location on Google Maps"
+                        src="https://maps.google.com/maps?q=Kecamatan%20Umbulharjo%2C%20Yogyakarta%2C%20Indonesia&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        className="h-full w-full border-0"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
                 </div>
                 <p className="mt-4 text-xs text-[#6a6a6a]">This listing's location is verified and the exact location will be provided after booking.</p>
             </section>
@@ -365,35 +324,6 @@ function BelowFold() {
                 <h2 className="text-base font-semibold">Neighborhood highlights</h2>
                 <p className="mt-4 max-w-[620px] leading-5">Located in a quiet housing complex in the south-center of the city, close to parks, local streets, and open houses.</p>
                 <button className="mt-3 font-semibold underline" type="button">Show more</button>
-            </section>
-            <section className="border-b border-[#dddddd] py-8">
-                <h2 className="text-base font-semibold">Meet your host</h2>
-                <div className="mt-6 grid grid-cols-[320px_1fr] gap-12 max-sm:grid-cols-1">
-                    <div className="rounded-2xl p-6 shadow-[0_6px_20px_rgba(0,0,0,0.14)]">
-                        <div className="grid grid-cols-[1fr_90px] items-center gap-4">
-                            <div className="text-center">
-                                <img src="https://picsum.photos/seed/show-host-card/160/160" alt="Koldo host profile" className="mx-auto h-24 w-24 rounded-full object-cover" />
-                                <h3 className="mt-2 text-xl font-semibold">Koldo</h3>
-                                <p className="text-xs">Host</p>
-                            </div>
-                            <div className="space-y-3 text-xs">
-                                <div><strong className="block text-lg">270</strong>Reviews</div>
-                                <div><strong className="block text-lg">4.91</strong>Rating</div>
-                                <div><strong className="block text-lg">9</strong>Years hosting</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="space-y-4">
-                        <div className="grid grid-cols-2 gap-2 text-xs max-sm:grid-cols-1">
-                            <span className="inline-flex items-center gap-2"><Award size={14} />Self-employed host</span>
-                            <span className="inline-flex items-center gap-2"><MessageSquare size={14} />Speaks English and Indonesian</span>
-                        </div>
-                        <p>I am an ordinary grateful person who enjoys hosting guests in Yogyakarta.</p>
-                        <h3 className="font-semibold">Host details</h3>
-                        <p className="text-xs">Response rate: 98%<br />Responds within an hour</p>
-                        <button className="rounded-md bg-[#222] px-5 py-3 text-xs font-semibold text-white" type="button">Message host</button>
-                    </div>
-                </div>
             </section>
             <section className="grid grid-cols-3 gap-12 border-b border-[#dddddd] py-8 max-sm:grid-cols-1">
                 {policyCards.map(({ title, body, Icon }) => (
@@ -409,33 +339,6 @@ function BelowFold() {
     );
 }
 
-function Footer() {
-    const columns = [
-        ['Support', 'Help Center', 'Get help with a safety issue', 'AirCover', 'Anti-discrimination', 'Disability support', 'Cancellation options'],
-        ['Hosting', 'Airbnb your home', 'AirCover for hosts', 'Hosting resources', 'Community forum', 'Hosting responsibly'],
-        ['VillaStay', 'Newsroom', 'Careers', 'Investors', 'Gift cards'],
-    ];
-
-    return (
-        <footer className="mt-10 bg-[#f7f7f7]">
-            <div className="mx-auto max-w-[1120px] px-6 py-8">
-                <div className="grid grid-cols-3 gap-12 max-sm:grid-cols-1">
-                    {columns.map((column) => (
-                        <div key={column[0]} className="space-y-3 text-xs">
-                            <h3 className="font-semibold">{column[0]}</h3>
-                            {column.slice(1).map((item) => <a key={item} className="block text-[#222]" href="#">{item}</a>)}
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-10 flex justify-between border-t border-[#dddddd] pt-5 text-xs text-[#6a6a6a] max-sm:block">
-                    <p>© 2026 VillaStay, Inc. - Privacy - Terms - Sitemap</p>
-                    <p className="max-sm:mt-3">English (US) - IDR</p>
-                </div>
-            </div>
-        </footer>
-    );
-}
-
 function MobileBookingBar() {
     return (
         <div className="fixed inset-x-0 bottom-0 z-20 flex items-center justify-between border-t border-[#dddddd] bg-white px-6 py-4 sm:hidden">
@@ -447,3 +350,6 @@ function MobileBookingBar() {
         </div>
     );
 }
+
+
+

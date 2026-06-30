@@ -7,14 +7,9 @@ import {
     ChevronDown,
     CircleParking,
     Coffee,
-    Facebook,
     Heart,
-    Home,
     HouseWifi,
-    Instagram,
-    LocateFixed,
     MapPin,
-    Menu,
     Mountain,
     Play,
     SquareStack,
@@ -23,9 +18,10 @@ import {
     Waves,
     Wifi,
 } from 'lucide-react';
+import { SiteFooter, SiteHeader } from '@/components/site-chrome';
 
 const heroImage = 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80';
-const locationImage = 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1400&q=80';
+const googleMapsUrl = 'https://www.google.com/maps?q=Bali%2C%20Indonesia&output=embed';
 
 const rooms = [
     {
@@ -81,7 +77,7 @@ const gallery = [
     'https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80',
     'https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=900&q=80',
     'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1501117716987-c8e1ecb21042?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=900&q=80',
     'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=900&q=80',
     'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80',
     'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80',
@@ -107,33 +103,8 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
 export default function Welcome() {
     return (
         <div className="landing min-h-screen bg-[#fafafa] text-[#1f1f1f]">
-            <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
-                <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-4 lg:px-8">
-                    <div className="flex items-center gap-2 text-[22px] font-semibold tracking-tight">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-black/10">
-                            <Home className="h-5 w-5" />
-                        </div>
-                        <span>VillaStay</span>
-                    </div>
 
-                    <nav className="hidden items-center gap-8 text-sm font-medium text-[#222] md:flex">
-                        {['Home', 'Rooms', 'Amenities', 'Gallery', 'Reviews', 'Location'].map((item) => (
-                            <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-[#ff385c]">
-                                {item}
-                            </a>
-                        ))}
-                    </nav>
-
-                    <div className="flex items-center gap-3">
-                        <button className="hidden rounded-full border border-black/10 p-2 md:inline-flex" type="button" aria-label="Open menu">
-                            <Menu className="h-5 w-5" />
-                        </button>
-                        <a href="#book" className="rounded-xl bg-[#ff385c] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(255,56,92,0.25)] transition hover:bg-[#e00b41]">
-                            Book Now
-                        </a>
-                    </div>
-                </div>
-            </header>
+            <SiteHeader />
 
             <main id="home">
                 <section className="relative overflow-hidden">
@@ -219,7 +190,7 @@ export default function Welcome() {
                                     </div>
                                     <div className="mt-5 flex items-center justify-between">
                                         <p className="text-[26px] font-semibold tracking-tight">{room.price} <span className="text-sm font-medium text-[#777]">/ night</span></p>
-                                        <a href="#book" className="rounded-xl bg-[#ff385c] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#e00b41]">View Details</a>
+                                        <a href="/show" className="rounded-xl bg-[#ff385c] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#e00b41]">View Details</a>
                                     </div>
                                 </div>
                             </article>
@@ -258,14 +229,6 @@ export default function Welcome() {
                             </article>
                         ))}
                     </div>
-                    <div className="mt-12 grid gap-6 lg:grid-cols-[280px_1fr]">
-                        <div className="rounded-[22px] border border-black/8 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
-                            <p className="text-sm font-semibold">Guest Reviews</p><div className="mt-4 flex items-end gap-3"><div className="text-5xl font-semibold leading-none">4.8</div><div className="pb-1 text-lg text-[#777]">/ 5</div></div><p className="mt-2 text-lg font-semibold">Excellent</p><p className="mt-1 text-sm text-[#666]">Based on 176 reviews</p>
-                        </div>
-                        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                            {reviews.map(([name, text]) => <article key={name} className="rounded-[22px] border border-black/8 bg-white p-5 shadow-[0_8px_24px_rgba(0,0,0,0.04)]"><p className="text-sm leading-6 text-[#4c4c4c]">“{text}”</p><p className="mt-5 text-sm font-semibold">{name}</p><p className="text-xs text-[#777]">April 2025</p></article>)}
-                        </div>
-                    </div>
                 </section>
 
                 <section id="location" className="mx-auto max-w-[1280px] px-4 pb-16 lg:px-8">
@@ -273,34 +236,36 @@ export default function Welcome() {
                         <div className="rounded-[24px] border border-black/8 bg-white p-6 shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
                             <h2 className="text-3xl font-semibold tracking-tight">Perfectly Located for Your Stay</h2>
                             <p className="mt-4 text-sm leading-6 text-[#5c5c5c]">VillaStay is located in a peaceful area just minutes from stunning beaches, local restaurants, and popular attractions.</p>
-                            <a href="#location" className="mt-6 inline-flex rounded-xl border border-[#ff385c] px-5 py-3 text-sm font-semibold text-[#ff385c] transition hover:bg-[#ff385c] hover:text-white">View location</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Bali%2C%20Indonesia" target="_blank" rel="noreferrer" className="mt-6 inline-flex rounded-xl border border-[#ff385c] px-5 py-3 text-sm font-semibold text-[#ff385c] transition hover:bg-[#ff385c] hover:text-white">View location</a>
                         </div>
                         <div className="relative overflow-hidden rounded-[24px] border border-black/8 bg-[#eaf1f6] shadow-[0_8px_24px_rgba(0,0,0,0.04)]">
-                            <img src={locationImage} alt="Map styled location" className="h-full min-h-[260px] w-full object-cover opacity-95" />
+                                                        <iframe
+                                title="VillaStay Google Maps location"
+                                src={googleMapsUrl}
+                                className="h-full min-h-[320px] w-full border-0"
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                allowFullScreen
+                            />
                             <div className="absolute left-1/2 top-10 -translate-x-1/2 rounded-full bg-white px-4 py-2 text-sm font-semibold shadow-lg"><span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-[#ff385c]" /> VillaStay</span></div>
                         </div>
                     </div>
                 </section>
 
-                <section className="mx-auto max-w-[1280px] px-4 pb-16 lg:px-8">
+                {/* <section className="mx-auto max-w-[1280px] px-4 pb-16 lg:px-8">
                     <div className="grid gap-6 overflow-hidden rounded-[28px] border border-black/8 bg-white shadow-[0_10px_28px_rgba(0,0,0,0.06)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                         <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb21042?auto=format&fit=crop&w=1200&q=80" alt="Villa sunset pool" className="h-full min-h-[240px] w-full object-cover" />
                         <div className="p-8 lg:p-10"><h2 className="text-3xl font-semibold tracking-tight">Ready to stay at VillaStay?</h2><p className="mt-4 max-w-lg text-sm leading-6 text-[#5c5c5c]">Choose your room and enjoy a relaxing villa experience designed for comfort and unforgettable moments.</p><a href="#book" className="mt-6 inline-flex rounded-xl bg-[#ff385c] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e00b41]">Book Your Stay</a></div>
                     </div>
-                </section>
+                </section> */}
             </main>
 
-            <footer className="border-t border-black/8 bg-white">
-                <div className="mx-auto max-w-[1280px] px-4 py-10 lg:px-8">
-                    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-5">
-                        {['About VillaStay', 'Rooms', 'Guest Services', 'Contact', 'Legal'].map((title) => <div key={title}><h3 className="text-sm font-semibold uppercase tracking-[0.2em]">{title}</h3><ul className="mt-4 space-y-3 text-sm text-[#5f5f5f]"><li>Our Story</li><li>All Rooms</li><li>hello@villastay.com</li></ul></div>)}
-                    </div>
-                    <div className="mt-10 flex flex-col gap-4 border-t border-black/8 pt-6 text-sm text-[#777] md:flex-row md:items-center md:justify-between">
-                        <p>© 2026 VillaStay. All rights reserved.</p><div className="flex items-center gap-4 text-[#444]"><Instagram className="h-4 w-4" /><Facebook className="h-4 w-4" /><LocateFixed className="h-4 w-4" /></div>
-                    </div>
-                </div>
-            </footer>
+            <SiteFooter />
         </div>
     );
 }
+
+
+
+
 
